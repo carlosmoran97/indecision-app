@@ -4,31 +4,49 @@ import Action from './Action';
 import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
+import PropTypes from 'prop-types';
 
 export default class IndecisionApp extends React.Component {
-  state = {
-    options: [],
-    selectedOption: undefined
-  };
-  handleDeleteOptions = () => {
+  constructor(props){
+    super(props);
+    this.state = {
+      options: [],
+      selectedOption: undefined
+    };
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+    this.handleClearSelectedOption = this.handleClearSelectedOption.bind(this);
+    this.handleDeleteOption = this.handleDeleteOption.bind(this);
+    this.handlePick = this.handlePick.bind(this);
+    this.handleAddOption = this.handleAddOption.bind(this);
+  }
+  static get propTypes(){
+    return {
+      handleDeleteOptions: PropTypes.func,
+      handleClearSelectedOption: PropTypes.func,
+      handleDeleteOption: PropTypes.func,
+      handlePick: PropTypes.func,
+      handleAddOption: PropTypes.func
+    };
+  }
+  handleDeleteOptions(){
     this.setState(() => ({ options: [] }));
-  };
-  handleClearSelectedOption = () => {
+  }
+  handleClearSelectedOption(){
     this.setState(() => ({ selectedOption: undefined }));
   }
-  handleDeleteOption = (optionToRemove) => {
+  handleDeleteOption(optionToRemove){
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => optionToRemove !== option)
     }));
-  };
-  handlePick = () => {
+  }
+  handlePick(){
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
     this.setState(() => ({
       selectedOption: option
     }));
-  };
-  handleAddOption = (option) => {
+  }
+  handleAddOption(option){
     if (!option) {
       return 'Enter valid value to add item';
     } else if (this.state.options.indexOf(option) > -1) {
@@ -38,7 +56,7 @@ export default class IndecisionApp extends React.Component {
     this.setState((prevState) => ({
       options: prevState.options.concat(option)
     }));
-  };
+  }
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');

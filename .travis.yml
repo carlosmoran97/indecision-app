@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 8.12.0
+script:
+  - "npm run lint"
+  - "npm run test"
+deploy:
+  provider: heroku
+  api_key:
+    secure: ac567c3a-846d-4a8c-a27b-b27aae51b9ed
+  app: indecision-app-too115
+  on:
+    repo: carlosmoran97/indecision-app

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Action = (props) => (
   <div>
@@ -11,5 +12,10 @@ const Action = (props) => (
       </button>
   </div>
 );
+
+Action.propTypes = {
+  handlePick: PropTypes.func,
+  hasOptions: PropTypes.any
+};
 
 export default Action;

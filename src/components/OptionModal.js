@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
 
 const OptionModal = (props) => (
   <Modal
@@ -14,5 +15,10 @@ const OptionModal = (props) => (
     <button className="button" onClick={props.handleClearSelectedOption}>Okay</button>
   </Modal>
 );
+
+OptionModal.propTypes = {
+  selectedOption: PropTypes.number,
+  handleClearSelectedOption: PropTypes.func
+};
 
 export default OptionModal;
