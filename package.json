@@ -10,7 +10,7 @@
     "dev-server": "webpack-dev-server",
     "lint": "eslint src/**/*.js",
     "test": "jest",
-    "postinstall": "webpack --mode production",
+    "postinstall": "webpack",
     "start": "NODE_ENV=production node src/server/server.js"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "style-loader": "0.18.2",
     "validator": "8.0.0",
     "webpack": "3.1.0",
+    "webpack-cli": "^3.1.0",
     "webpack-dev-server": "2.5.1"
   },
   "devDependencies": {
