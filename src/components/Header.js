@@ -11,7 +11,7 @@ const Header = (props) => (
 );
 
 Header.defaultProps = {
-  title: 'Indecision app'
+  title: 'Indecision app TOO115'
 };
 
 Header.propTypes = {
