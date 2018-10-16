@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Header = (props) => (
   <div className="header">
@@ -11,6 +12,11 @@ const Header = (props) => (
 
 Header.defaultProps = {
   title: 'Indecision'
+};
+
+Header.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string
 };
 
 export default Header;

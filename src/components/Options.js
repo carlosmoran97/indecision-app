@@ -1,5 +1,6 @@
 import React from 'react';
 import Option from './Option';
+import PropTypes from 'prop-types';
 
 const Options = (props) => (
   <div>
@@ -26,5 +27,16 @@ const Options = (props) => (
     }
   </div>
 );
+
+Options.propTypes = {
+  handleDeleteOptions: PropTypes.func,
+  options: PropTypes.array,
+  handleDeleteOption: PropTypes.func
+};
+
+Options.props.options.propTypes = {
+  length: PropTypes.number,
+  map: PropTypes.func
+};
 
 export default Options;

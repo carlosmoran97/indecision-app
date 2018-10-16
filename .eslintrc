@@ -1,0 +1,33 @@
+{
+    "env":{
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "extends":[
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jest/recommended"
+    ],
+    "parserOptions":{
+        "ecmaFeatures":{
+            "jsx": true
+        },
+        "ecmaVersion": 6,
+        "sourceType":"module"
+    },
+    "plugins":[
+        "jest"
+        ,"babel"
+    ],
+    "rules":{
+        "no-console":"off",
+        "babel/semi": 1
+    },
+    "settings": {
+        "react":{
+            "version":"15.6"
+        }
+    }
+}
