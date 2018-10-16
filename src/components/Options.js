@@ -34,9 +34,4 @@ Options.propTypes = {
   handleDeleteOption: PropTypes.func
 };
 
-Options.props.options.propTypes = {
-  length: PropTypes.number,
-  map: PropTypes.func
-};
-
 export default Options;
